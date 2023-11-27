@@ -1,0 +1,15 @@
+.DS_Store
+node_modules
+*.log
+
+.vscode
+.env
+.env.local
+.env.dev
+.env.prod
+
+dist
+build
+build/**/*
+.cache
+.idea

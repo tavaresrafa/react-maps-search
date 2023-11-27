@@ -1,0 +1,140 @@
+{
+  "extends": [ "airbnb","eslint:recommended","plugin:react/recommended", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    // Rules for prettier (interpreted by prettier-eslint)
+    "quotes": ["off", "single"],
+    "arrow-parens": ["error", "as-needed"],
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreComments": true
+      }
+    ],
+    // JavaScript rules
+    "arrow-body-style": "off",
+    "no-console": 1,
+    "consistent-return": "off",
+    "space-before-function-paren": "off",
+    "no-case-declarations": "off", // Allows switch/case fall-through
+    "prefer-destructuring": "off",
+    "import/no-anonymous-default-export": "off",
+    // The following .eslintrc configuration will highlight problematic imports from @mui packages:
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
+      }
+    ],
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
+    "no-unused-vars": [
+      1,
+      {
+        "args": "after-used",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "mode": "minimum"
+      }
+    ],
+    // React rules
+    "react/prefer-stateless-function": "off",
+    "react/default-props-match-prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-first-prop-new-line": ["error", "multiline"],
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-danger": "off",
+    "react/destructuring-assignment": "off",
+    "react/no-array-index-key": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react-hooks/exhaustive-deps":"off",
+    "react/react-in-jsx-scope": "off",
+    
+    // Object is sometimes useful when working with libs
+    "react/forbid-prop-types": [
+      "error",
+      {
+        "forbid": ["array", "any"]
+      }
+    ],
+    "react/jsx-wrap-multilines": [
+      "error",
+      { "declaration": false, "assignment": false }
+    ],
+    // Produces lots of false positives.
+    // @see: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md#known-issueslimitations
+    "react/no-unused-prop-types": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "react/sort-comp": [
+      "error",
+      {
+        "order": [
+          "constructor",
+          "static-methods",
+          "lifecycle",
+          "everything-else",
+          "rendering"
+        ],
+        "groups": {
+          "rendering": ["/^render.+$/", "render"],
+          "lifecycleExceptConstructor": [
+            "displayName",
+            "propTypes",
+            "contextTypes",
+            "childContextTypes",
+            "mixins",
+            "statics",
+            "defaultProps",
+            "getDefaultProps",
+            "getInitialState",
+            "state",
+            "getChildContext",
+            "componentWillMount",
+            "componentDidMount",
+            "componentWillReceiveProps",
+            "shouldComponentUpdate",
+            "componentWillUpdate",
+            "componentDidUpdate",
+            "componentWillUnmount"
+          ]
+        }
+      }
+    ],
+    // Import rules
+    "no-restricted-exports": "off",
+    "import/newline-after-import": "off", // index.js doesn"t follow this
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "import/first": ["error"],
+    "import/order": "off",
+    "import/no-extraneous-dependencies": "off",
+    // JSX-A11y rules
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/label-has-for": "off"
+  }
+}
